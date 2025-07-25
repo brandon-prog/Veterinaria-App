@@ -69,9 +69,8 @@ export default function AppointmentForm() {
         }
     })
     
-    const onSubmit = async (data: FormData) => {
-
-    }
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const onSubmit = async (data: FormData) => {}
 
     const nextStep = () => setStep((prev) => prev + 1)
     const prevStep = () => setStep((prev) => prev - 1)

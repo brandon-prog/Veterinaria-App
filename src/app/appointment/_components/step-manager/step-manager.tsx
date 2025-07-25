@@ -5,6 +5,21 @@ import { cn } from '@/src/lib/utils'
 import { Check } from 'lucide-react'
 import { useEffect } from 'react';
 
+type FormValues = {
+  petType: string;
+  petName: string;
+  petGender: string;
+  petBreed: string;
+  petDescription: string;
+  petsCount: number;
+  serviceType: string;
+  visitReason: string;
+  visitDetails?: string;
+  appointmentDate: string;
+  appointmentTime: string;
+  termsAccepted: boolean;
+};
+
 interface StepManagerProps {
     step: number
     expanded: boolean;
@@ -22,12 +37,11 @@ export default function StepManager ({
     expanded,
     setExpanded,
  }: StepManagerProps){
-    const methods = useFormContext();
+    const methods = useFormContext<FormValues>();
     const { setValue, getValues } = methods
 
     const petType = useWatch({ name: 'petType', control: methods.control })
-const petSelection = useWatch({ name: 'petSelection', control: methods.control })
-const selectedPetId = useWatch({ name: 'selectedPetId', control: methods.control })
+
 const petName = useWatch({ name: 'petName', control: methods.control })
 const petGender = useWatch({ name: 'petGender', control: methods.control })
 const petBreed = useWatch({ name: 'petBreed', control: methods.control })
