@@ -16,7 +16,7 @@ import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 
 export default function Header() {
-  const { data: session, status } = useSession();
+  const { data: session } = useSession();
   const isAuthenticated = !!session;
 
   return (
